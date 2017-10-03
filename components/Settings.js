@@ -4,8 +4,9 @@ import SettingsIcon from './svg/Settings'
 import ThemeSelect from './ThemeSelect'
 import Slider from './Slider'
 import Toggle from './Toggle'
+import ExpandableList from './ExpandableList'
 import WindowPointer from './WindowPointer'
-import { COLORS } from '../lib/constants'
+import { COLORS, FONTS } from '../lib/constants'
 
 class Settings extends React.Component {
   constructor(props) {
@@ -35,6 +36,16 @@ class Settings extends React.Component {
         </div>
         <div className="settings-settings">
           <WindowPointer fromLeft="15px" />
+          <ExpandableList
+            label="Font family"
+            list={FONTS}
+            onChange={this.props.onChange.bind(null, 'fontFamily')}
+          />
+          <Slider
+            label="Font size"
+            initialValue={12}
+            onChange={this.props.onChange.bind(null, 'fontSize')}
+          />
           <ThemeSelect onChange={this.props.onChange.bind(null, 'windowTheme')} />
           <Toggle
             label="Drop shadow"

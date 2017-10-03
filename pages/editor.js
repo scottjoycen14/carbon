@@ -43,6 +43,8 @@ class Editor extends React.Component {
     super(props)
     this.state = {
       background: '#ABB8C3',
+      fontFamily: 'Hack',
+      fontSize: '12px',
       theme: THEMES.seti.id,
       language: DEFAULT_LANGUAGE,
       dropShadow: true,
@@ -147,8 +149,7 @@ class Editor extends React.Component {
             )}
           </ReadFileDropContainer>
         </div>
-        <style jsx>
-          {`
+        <style jsx>{`
             #editor {
               background: ${COLORS.BLACK};
               border: 3px solid ${COLORS.SECONDARY};
@@ -160,8 +161,7 @@ class Editor extends React.Component {
               display: flex;
               margin-left: auto;
             }
-          `}
-        </style>
+        `}</style>
       </Page>
     )
   }
