@@ -103,6 +103,14 @@ class Editor extends React.Component {
   }
 
   getCarbonImage() {
+    //if safari, get image from api
+    if (
+      navigator.userAgent.indexOf('Safari') != -1 &&
+      navigator.userAgent.indexOf('Chrome') == -1
+    ) {
+      return api.image(window.location.href)
+    }
+
     const node = document.getElementById('export-container')
 
     const config = {
